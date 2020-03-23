@@ -87,7 +87,7 @@ while(loop)
 	{	
 		textdiv.innerText = w["Пауза"]
 	var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
-	///await anim.finished
+	/////await anim.finished
 	await sleep(formula[1]*pulsesec*1000);
 	//hbar.style.width = '350px'
 	//console.log('finished 2')
