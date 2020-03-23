@@ -1,0 +1,40 @@
+var si1 = 
+[
+    {name:'Антирувус',text:'Antivirus'},
+    {name:'Восстановление сил',text:'Recuperation'},
+    {name:'Снять стресс',text:'reliеve stress'},
+    {name:'Снять головную боль',text:'relieve a headache'},
+    {name:'Метод Бутейко',text:'Buteyko method'},
+    {name:'Укрепление иммунитета 2',text:'strengthening of immunity 2'},
+    {name:'Укрепление иммунитета 1',text:'strengthening of immunity 1'},
+    {name:'Снизить артериальное давление',text:'lower blood pressure'},
+    {name:'Сбросить лишний вес',text:'lose weight'},
+    {name:'Бросить курить',text:'give up smoking'},
+    {name:'Поднять тонус',text:'raise the tone'},
+    {name:'Быстро заснуть',text:'quickly fall asleep'},
+    {name:'Метод Стрельниковой',text:'Strelnikova method'},
+   
+    
+]
+
+var si2 =
+[
+    {name:'Новичек',text:'Newcomer'},
+    {name:'Начинающий',text:'Beginner'},
+    {name:'Любитель',text:'Amateur'},
+    {name:'Опытный',text:'Experienced'},
+    {name:'Эксперт',text:'Expert'},
+    {name:'Мастер',text:'Master'},
+   
+]
+
+var w=
+[
+    {name:'Пульс',text:'Pulse'},
+    {name:'Вдох',text:'Inhale'},
+    {name:'Выдох',text:'Exhale'},
+    {name:'Пауза',text:'Pause'},
+    {name:'Старт',text:'Start'}, 
+    {name:'Стоп',text:'Stop'}, 
+    //{name:'',text:''},
+]

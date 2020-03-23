@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    
+<link rel="stylesheet" type="text/css" href="layout.css">
+<link rel="stylesheet" type="text/css" href="progressBars.css">
+	<link rel="stylesheet" type="text/css" href="button.css">
+       
+  <title>MedBreath</title>
+</head>
+<body>
+	
+<div class="containerAll">
+	<select id="select1" name="cars" onchange="onChange1()">
+		<!-- <option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat">Fiat</option>
+		<option value="audi">Audi</option> -->
+	  </select> 
+	  <select id="select2" name="cars" onchange="onChange2()">
+		<!-- <option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat">Fiat</option>
+		<option value="audi">Audi</option> -->
+	  </select> 
+	<div class="textDiv" id="textDiv">Press Start...</div>
+	<div class="panelPulse"><div id="txtpulse" class="textpulse" >Пульс:</div> <input id="pulse" type="text" value="70"></input> </div>
+  <div class="horbar"> <div class = "horizontal_bar" id="hbar"></div> </div>
+  <div class="vertbar"> <div class="vertical_bar" id="vbar" > </div></div>
+ <div class="horbar"><div class = "horizontal_bar" id="hbar2"></div></div>
+    
+	<div class="panelButton">
+      
+			<button onClick="startStopButton()">
+			<span id="textbtn">Start</span>
+			</button>
+	</div>
+    
+</div>
+    <script>
+		//var si1;
+	</script>
+	<!-- <script src="selectitem1_ru.js" ></script>  -->
+	<!-- <script src="selectitem1_en.js" ></script>  -->
+	<script src="selectitem1_he.js" ></script> 
+    <script src="formulas.js" ></script>
+    <script src="script.js" ></script>
+
+    </body>
+</html>
