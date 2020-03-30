@@ -4,18 +4,6 @@ body {
   min-width: 400px;
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  min-width: 100%;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 select {
   font-size: 23px;
   background: #ece7e7;
@@ -75,19 +63,19 @@ select {
 }
 
 .panelPulse {
-  width: 12rem;
+  width: 10rem;
+  background: red;
   margin: auto;
   position: relative;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .textpulse {
   display: inline;
   font-size: 25px;
-  text-align: center;
+  margin: auto;
 }
 
 input {
