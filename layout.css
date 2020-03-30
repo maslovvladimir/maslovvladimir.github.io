@@ -64,7 +64,6 @@ select {
 
 .panelPulse {
   width: 10rem;
-  background: red;
   margin: auto;
   position: relative;
   -webkit-box-align: center;
@@ -75,7 +74,6 @@ select {
 .textpulse {
   display: inline;
   font-size: 25px;
-  margin: auto;
 }
 
 input {
