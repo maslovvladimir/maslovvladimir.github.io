@@ -1,4 +1,4 @@
-
+// (C) Maslov V.V 2020 Kaluga
 
 var hbar = document.getElementById("hbar");
 var vbar = document.getElementById("vbar");
@@ -11,11 +11,40 @@ var select1 = document.getElementById("select1");
 var select2 = document.getElementById("select2");
 var valpulse = document.getElementById("pulse");
 var txtpulse = document.getElementById("txtpulse");
+var txttime = document.getElementById("timeDiv");
+var sound = document.getElementById("sound");
 
+var isSound=false;
 var formula;
 
 var pulse = 1*valpulse.value;
 var pulsesec = 60/pulse; // ДЛительность 1 удара пульса
+
+txttime.innerText = "00:00"
+var session_time = 0; //Date.now()
+
+ setInterval(function (){ // time calculation
+	 if (loop)
+		 {
+			session_time += 1000;
+		 }
+	 d = new Date();
+d.setTime(session_time);
+	 var mm = ""+d.getMinutes()
+	 if (mm.length <2)
+		 {
+			 mm = "0"+mm
+		 }
+	 var ss = ""+ d.getSeconds()
+	 if (ss.length < 2)
+		 {
+			 ss = "0"+ ss;
+		 }
+	 txttime.innerText = mm+":"+ss;
+//console.log('timer '+ d.toTimeString());
+	
+	
+},1000);
 
 textdiv.innerText = w['Нажмите Старт']
 txtpulse.innerText = w['Пульс']
@@ -41,6 +70,11 @@ var option = document.createElement("option");
     select2.appendChild(option);
 }
 
+function changeSound()
+{
+	isSound = sound.checked;
+}
+
 getFormula();
 
 function getFormula()
@@ -62,13 +96,20 @@ else {hbar2.parentElement.hidden = false;}
 
 }
 
-//var anim
-function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+async function sleep(ms) {
+	return new Promise((resolve,reject) => setTimeout(function(){resolve()}, ms))
   }
+
+
 
 async function startAnimations()
 {
+			var audio1 = new Audio('1.mp3');
+			var audio2 = new Audio('2.mp3');
+			var audio3 = new Audio('3.mp3');
+			var audio4 = new Audio('4.mp3');
+			//audio.play();
+
 	loop = true
 while(loop)
 	{
@@ -76,41 +117,65 @@ while(loop)
   //hbar.style.animation = "hmove 3s";
 		if (!loop) break
 		textdiv.innerText = w["Вдох"]
-	var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
+	vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
+	if (isSound) {audio1.play();}
+ vbar.style.webkitAnimationName="vertup";	
+	//var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
 	//await anim2.finished
 	await sleep(formula[0]*pulsesec*1000);
+		//await sleep(3*1000);
 	vbar.style.height = '100%'
 	vbar.style.top = '0%'
-	//console.log('finished 1')
+		
+		//console.log('finished 1')
 	if (!loop) break
 	if (formula[1]>0)
 	{	
 		textdiv.innerText = w["Пауза"]
-	var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
-	/////await anim.finished
+	hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
+	if (isSound) {audio2.play();}
+ 	hbar.style.webkitAnimationName="horright";
+
+	//var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
+	//await anim.finished
 	await sleep(formula[1]*pulsesec*1000);
+		//await sleep(3*1000);
+		hbar.style.webkitAnimationName="stop";
 	//hbar.style.width = '350px'
 	//console.log('finished 2')
+		//return;
 	}
 if (!loop) break
 				textdiv.innerText = w["Выдох"]
-
-		var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
+	vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+	if (isSound) {audio3.play();}
+ 	vbar.style.webkitAnimationName="vertdown";
+		//var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
 	//await anim2.finished
 	await sleep(formula[2]*pulsesec*1000);
+		//await sleep(3*1000);
 		vbar.style.height = '20px'
 		vbar.style.top = '280px'
+		//return;
 	//console.log('finished 3')
 
 	if (!loop) break
 	if (formula[3]>0)
 		{
 		textdiv.innerText = w["Пауза"]
+				
+ 	
+			hbar2.style.webkitAnimationDuration=""+formula[3]*pulsesec*1000+"ms";
+			if (isSound) {audio4.play();}
+			hbar2.style.webkitAnimationName="horleft";
+
 	//var anim = hbar.animate([{ width: '350px' }, { width: '20px' }],3000)
-	var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
+	//var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
 	//await anim.finished
 		await sleep(formula[3]*pulsesec*1000);
-		hbar2.style.width = '0%'
+			//await sleep(3*1000);
+			hbar2.style.webkitAnimationName="stop";
+					hbar2.style.width = '0%'
 		//console.log('finished 4')
 		}	
 	}
@@ -119,6 +184,7 @@ if (!loop) break
 
 function startButton()
 {
+	
 	//alert("Click")
 	console.log("click start")
 	//document.getElementById("hbar").style.animation=""

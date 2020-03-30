@@ -1,16 +1,3 @@
-/*
-* 	BIG Jelly Button
-*		Original source from Mathias Adam:
-*				- https://dribbble.com/shots/6209185-BIG-Jelly-Button
-*
-*		I tried to stay as true to the original source as possible.
-*		Unforutunately there were a few effects I couldn't make 
-*		happen with CSS. Primarily the suble noise texture. I 
-*		considered using a base64 encoded noise pattern overlay but
-*		I felt like that was cheating. I also couldn't do the
-*		true bevel effect on the label since CSS doesn't have an
-*		inset text shadow option. 
-*/
 button {
   cursor: pointer;
   position: relative;

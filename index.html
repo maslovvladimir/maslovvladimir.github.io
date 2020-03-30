@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="progressBars.css">
 	<link rel="stylesheet" type="text/css" href="button.css">
  
-	<meta name="viewport" content="width="400" >
+	<meta name="viewport" content="width=400" >
   <title>MedBreath</title>
 </head>
 <body>
@@ -25,9 +25,16 @@
 		<option value="fiat">Fiat</option>
 		<option value="audi">Audi</option> -->
 	  </select> 
+	<div class="checkboxdiv">
+    <input type="checkbox" class="checkbox" id='sound' name="sound" value="sound"
+					 onclick = "changeSound()">
+		 <label class="textDiv" for="sound">Sound</label>
+	</div>
 	<div class="textDiv" id="textDiv">Press Start...</div>
 	<div class="panelPulse"><div id="txtpulse" class="textpulse" >Пульс:</div> <input id="pulse" type="text" value="70"></input> </div>
+	<div class="textDiv" id="timeDiv">00:00</div>
   <div class="horbar"> <div class = "horizontal_bar" id="hbar"></div> </div>
+	
   <div class="vertbar"> <div class="vertical_bar" id="vbar" > </div></div>
  <div class="horbar"><div class = "horizontal_bar" id="hbar2"></div></div>
     
@@ -36,11 +43,13 @@
 			<span id="textbtn">Start</span>
 			</button>
 	</div>
-    
 </div>
-    <script>
-		//var si1;
-	</script>
+	
+<!-- 	 <audio controls>
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>  -->
+
 	<script src="selectitem1_ru.js" ></script>
 	<!-- <script src="selectitem1_en.js" ></script>  -->
 	<!-- <script src="selectitem1_he.js" ></script>  -->
