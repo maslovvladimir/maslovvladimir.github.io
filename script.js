@@ -23,6 +23,14 @@ var pulsesec = 60/pulse; // ДЛительность 1 удара пульса
 txttime.innerText = "00:00"
 var session_time = 0; //Date.now()
 
+var audio1 = new Audio('1.mp3');
+var audio2 = new Audio('2.mp3');
+var audio3 = new Audio('3.mp3');
+var audio4 = new Audio('4.mp3');
+//audio.play();
+
+
+
  setInterval(function (){ // time calculation
 	 if (loop)
 		 {
@@ -100,84 +108,161 @@ async function sleep(ms) {
 	return new Promise((resolve,reject) => setTimeout(function(){resolve()}, ms))
   }
 
+async function animationOld()
+{
 
+}
 
 async function startAnimations()
 {
-			var audio1 = new Audio('1.mp3');
-			var audio2 = new Audio('2.mp3');
-			var audio3 = new Audio('3.mp3');
-			var audio4 = new Audio('4.mp3');
-			//audio.play();
-
 	loop = true
 while(loop)
 	{
 	//console.log("start...")
   //hbar.style.animation = "hmove 3s";
-		if (!loop) break
-		textdiv.innerText = w["Вдох"]
-	vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
-	if (isSound) {audio1.play();}
- vbar.style.webkitAnimationName="vertup";	
-	//var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
-	//await anim2.finished
-	await sleep(formula[0]*pulsesec*1000);
-		//await sleep(3*1000);
-	vbar.style.height = '100%'
-	vbar.style.top = '0%'
-		
-		//console.log('finished 1')
-	if (!loop) break
-	if (formula[1]>0)
-	{	
-		textdiv.innerText = w["Пауза"]
-	hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
-	if (isSound) {audio2.play();}
- 	hbar.style.webkitAnimationName="horright";
+  if (!loop) break
+  if (select1.value == "Антивирус")
+  {
+	textdiv.innerText = w["Вдох1"]
+  }
+  else {
+	  textdiv.innerText = w["Вдох"]
+  }
+vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
+if (isSound) {audio1.play();}
+vbar.style.webkitAnimationName="vertup";	
+//var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
+//await anim2.finished
+await sleep(formula[0]*pulsesec*1000);
+  //await sleep(3*1000);
+vbar.style.height = '100%'
+vbar.style.top = '0%'
+  
+  //console.log('finished 1')
+if (!loop) break;
+if (formula[1]>0)
+{	
+  textdiv.innerText = w["Пауза"]
+hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
+if (isSound) {audio2.play();}
+hbar.style.webkitAnimationName="horright";
 
-	//var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
-	//await anim.finished
-	await sleep(formula[1]*pulsesec*1000);
-		//await sleep(3*1000);
-		hbar.style.webkitAnimationName="stop";
-	//hbar.style.width = '350px'
-	//console.log('finished 2')
-		//return;
-	}
+//var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
+//await anim.finished
+await sleep(formula[1]*pulsesec*1000);
+  //await sleep(3*1000);
+  hbar.style.webkitAnimationName="stop";
+//hbar.style.width = '350px'
+//console.log('finished 2')
+  //return;
+}
 if (!loop) break
-				textdiv.innerText = w["Выдох"]
-	vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
-	if (isSound) {audio3.play();}
- 	vbar.style.webkitAnimationName="vertdown";
-		//var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
-	//await anim2.finished
-	await sleep(formula[2]*pulsesec*1000);
-		//await sleep(3*1000);
-		vbar.style.height = '20px'
-		vbar.style.top = '280px'
-		//return;
-	//console.log('finished 3')
+if (select1.value == "Антивирус")
+  {
+	textdiv.innerText = w["Выдох1"]
+  }
+  else {
+	  textdiv.innerText = w["Выдох"]
+  }
+vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+if (isSound) {audio3.play();}
+vbar.style.webkitAnimationName="vertdown";
+  //var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
+//await anim2.finished
+await sleep(formula[2]*pulsesec*1000);
+  //await sleep(3*1000);
+  vbar.style.height = '20px'
+  vbar.style.top = '280px'
+  //return;
+//console.log('finished 3')
 
-	if (!loop) break
-	if (formula[3]>0)
-		{
+////////////////////////////////////////////////////////
+if (select1.value == "Антивирус")
+{ // Начало повтора
+		//console.log("start...")
+  //hbar.style.animation = "hmove 3s";
+  if (!loop) break
+  textdiv.innerText = w["Вдох2"]
+vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
+if (isSound) {audio1.play();}
+vbar.style.webkitAnimationName="vertup";	
+//var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
+//await anim2.finished
+await sleep(formula[0]*pulsesec*1000);
+  //await sleep(3*1000);
+vbar.style.height = '100%'
+vbar.style.top = '0%'
+  
+  //console.log('finished 1')
+if (!loop) break;
+if (formula[1]>0)
+{	
+	if (select1.value == "Антивирус")
+	{
+	  textdiv.innerText = w["Пауза1"]
+	}
+	else {
 		textdiv.innerText = w["Пауза"]
-				
- 	
-			hbar2.style.webkitAnimationDuration=""+formula[3]*pulsesec*1000+"ms";
-			if (isSound) {audio4.play();}
-			hbar2.style.webkitAnimationName="horleft";
+	}
+hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
+if (isSound) {audio2.play();}
+hbar.style.webkitAnimationName="horright";
 
-	//var anim = hbar.animate([{ width: '350px' }, { width: '20px' }],3000)
-	//var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
-	//await anim.finished
-		await sleep(formula[3]*pulsesec*1000);
-			//await sleep(3*1000);
-			hbar2.style.webkitAnimationName="stop";
-					hbar2.style.width = '0%'
-		//console.log('finished 4')
-		}	
+//var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
+//await anim.finished
+await sleep(formula[1]*pulsesec*1000);
+  //await sleep(3*1000);
+  hbar.style.webkitAnimationName="stop";
+//hbar.style.width = '350px'
+//console.log('finished 2')
+  //return;
+}
+if (!loop) break
+if (select1.value == "Антивирус")
+{
+  textdiv.innerText = w["Выдох1"]
+}
+else {
+	textdiv.innerText = w["Выдох"]
+}
+vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+if (isSound) {audio3.play();}
+vbar.style.webkitAnimationName="vertdown";
+  //var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
+//await anim2.finished
+await sleep(formula[2]*pulsesec*1000);
+  //await sleep(3*1000);
+  vbar.style.height = '20px'
+  vbar.style.top = '280px'
+  //return;
+//console.log('finished 3')
+
+
+} // конец повтора
+if (!loop) break
+if (formula[3]>0)
+  {
+	if (select1.value == "Антивирус")
+	{
+	  textdiv.innerText = w["Пауза1"]
+	}
+	else {
+		textdiv.innerText = w["Пауза"]
+	}
+
+	  hbar2.style.webkitAnimationDuration=""+formula[3]*pulsesec*1000+"ms";
+	  if (isSound) {audio4.play();}
+	  hbar2.style.webkitAnimationName="horleft";
+
+//var anim = hbar.animate([{ width: '350px' }, { width: '20px' }],3000)
+//var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
+//await anim.finished
+  await sleep(formula[3]*pulsesec*1000);
+	  //await sleep(3*1000);
+	  hbar2.style.webkitAnimationName="stop";
+			  hbar2.style.width = '0%'
+  //console.log('finished 4')
+  }	
 	}
   //alert(result); // "РіРѕС‚РѕРІРѕ!"
 }
