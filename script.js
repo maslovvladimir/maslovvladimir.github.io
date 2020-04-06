@@ -93,7 +93,7 @@ var i2 = select2.value;
 formula = li[select1.value][select2.value];
 
 if (formula[1]==0) {
-	hbar.parentElement.hidden = true;
+	//hbar.parentElement.hidden = true;
 }
 else {hbar.parentElement.hidden = false;}
 
@@ -232,8 +232,6 @@ vbar.style.webkitAnimationName="vertdown";
 //await anim2.finished
 await sleep(formula[2]*pulsesec*1000);
   //await sleep(3*1000);
-  vbar.style.height = '20px'
-  vbar.style.top = '280px'
   //return;
 //console.log('finished 3')
 
@@ -249,7 +247,9 @@ if (formula[3]>0)
 	else {
 		textdiv.innerText = w["Пауза"]
 	}
-
+	vbar.style.height = '1.5rem'
+	vbar.style.top = 13-1.5+'rem'
+  
 	  hbar2.style.webkitAnimationDuration=""+formula[3]*pulsesec*1000+"ms";
 	  if (isSound) {audio4.play();}
 	  hbar2.style.webkitAnimationName="horleft";
