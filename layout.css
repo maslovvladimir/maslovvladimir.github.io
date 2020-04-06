@@ -32,7 +32,7 @@ select {
 }
 
 .containerAll {
-  font-size: 25px;
+  font-size: 18px;
   overflow: hidden;
   width: 400px;
   height: 100%;
@@ -43,9 +43,10 @@ select {
 }
 
 .textDiv {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .horbar {

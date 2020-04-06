@@ -93,7 +93,7 @@ var i2 = select2.value;
 formula = li[select1.value][select2.value];
 
 if (formula[1]==0) {
-	//hbar.parentElement.hidden = true;
+	hbar.parentElement.hidden = true;
 }
 else {hbar.parentElement.hidden = false;}
 

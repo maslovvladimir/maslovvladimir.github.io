@@ -6,27 +6,9 @@
   
   animation: pulse 3s linear infinite alternate; 
 }*/
-@-webkit-keyframes pulse {
-  from {
-    width: 20px;
-  }
-  100% {
-    width: 300px;
-  }
-}
-
-@keyframes pulse {
-  from {
-    width: 20px;
-  }
-  100% {
-    width: 300px;
-  }
-}
-
 .horizontal_bar {
   height: 50px;
-  width: 0%;
+  width: 0;
   background: red;
   position: absolute;
   border-radius: 10px;
@@ -127,14 +109,14 @@
 
 @keyframes stop {}@-webkit-keyframes horright {
   from {
-    width: 20px;
+    width: 0px;
   }
   to {
     width: 300px;
   }
 }@keyframes horright {
   from {
-    width: 20px;
+    width: 0px;
   }
   to {
     width: 300px;

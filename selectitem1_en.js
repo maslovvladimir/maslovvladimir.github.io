@@ -1,6 +1,6 @@
 var si1 = 
 [
-    {name:'Антирувус',text:'Antivirus'},
+    {name:'Антивирус',text:'Antivirus'},
     {name:'Восстановление сил',text:'Recuperation'},
     {name:'Снять стресс',text:'Stress relief'},
     {name:'Снять головную боль',text:'Headache relief'},
@@ -29,13 +29,16 @@ var si2 =
 ]
 
 var w=
-[
-    {name:'Пульс',text:'Pulse'},
-    {name:'Вдох',text:'Inhale'},
-    {name:'Выдох',text:'Exhale'},
-    {name:'Пауза',text:'Pause'},
-    {name:'Старт',text:'Start'}, 
-    {name:'Стоп',text:'Hold'},
-    {name:'Нажмите Старт',text:'Нажмите Старт'},
-    //{name:'',text:''},
-]
+{
+    'Пульс':'Pulse',
+    'Вдох':'Inhale',
+    'Вдох1':'Inhale',
+    'Вдох2':'Inhale',
+    'Выдох':'Exhale',
+    'Выдох1':'Exhale',
+    'Пауза':'Pause',
+    'Пауза1':'Pause',
+    'Старт':'Start', 
+    'Стоп':'Stop', 
+    'Нажмите Старт':'Press Start',
+}
