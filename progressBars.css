@@ -1,11 +1,3 @@
-/*.horizontal_bar {
-  width:100%;
-  height:100%;
-  background-color:red;
-  border-radius: 10px;
-  
-  animation: pulse 3s linear infinite alternate; 
-}*/
 .horizontal_bar {
   height: 50px;
   width: 0;

@@ -14,6 +14,10 @@ var txtpulse = document.getElementById("txtpulse");
 var txttime = document.getElementById("timeDiv");
 var sound = document.getElementById("sound");
 
+var hbar2text = document.getElementById("hbar2text");
+var hbartext = document.getElementById("hbartext");
+var vertext = document.getElementById("vertext");
+
 var isSound=false;
 var formula;
 
@@ -129,8 +133,10 @@ while(loop)
 	  textdiv.innerText = w["Вдох"]
   }
 vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
+vertext.style.webkitAnimationDuration = vbar.style.webkitAnimationDuration;
 if (isSound) {audio1.play();}
-vbar.style.webkitAnimationName="vertup";	
+vbar.style.webkitAnimationName="vertup";
+vertext.style.webkitAnimationName="textanim2";	
 //var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
 //await anim2.finished
 await sleep(formula[0]*pulsesec*1000);
@@ -145,6 +151,9 @@ if (formula[1]>0)
   textdiv.innerText = w["Пауза"]
 hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
 if (isSound) {audio2.play();}
+
+hbartext.style.webkitAnimationDuration=hbar.style.webkitAnimationDuration;
+hbartext.style.webkitAnimationName="textanim2";
 hbar.style.webkitAnimationName="horright";
 
 //var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
@@ -152,6 +161,7 @@ hbar.style.webkitAnimationName="horright";
 await sleep(formula[1]*pulsesec*1000);
   //await sleep(3*1000);
   hbar.style.webkitAnimationName="stop";
+  hbartext.style.webkitAnimationName="stop";
 //hbar.style.width = '350px'
 //console.log('finished 2')
   //return;
@@ -165,8 +175,10 @@ if (select1.value == "Антивирус")
 	  textdiv.innerText = w["Выдох"]
   }
 vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+vertext.style.webkitAnimationDuration = vbar.style.webkitAnimationDuration;
 if (isSound) {audio3.play();}
 vbar.style.webkitAnimationName="vertdown";
+vertext.style.webkitAnimationName="textanim";	
   //var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
 //await anim2.finished
 await sleep(formula[2]*pulsesec*1000);
@@ -254,13 +266,17 @@ if (formula[3]>0)
 	  if (isSound) {audio4.play();}
 	  hbar2.style.webkitAnimationName="horleft";
 
+	  hbar2text.style.webkitAnimationDuration=hbar2.style.webkitAnimationDuration;
+	  hbar2text.style.webkitAnimationName="textanim";
+
 //var anim = hbar.animate([{ width: '350px' }, { width: '20px' }],3000)
 //var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
 //await anim.finished
   await sleep(formula[3]*pulsesec*1000);
 	  //await sleep(3*1000);
 	  hbar2.style.webkitAnimationName="stop";
-			  hbar2.style.width = '0%'
+	hbar2.style.width = '0%'
+	hbar2text.style.webkitAnimationName="stop";
   //console.log('finished 4')
   }	
 	}
