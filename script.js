@@ -4,7 +4,7 @@ var hbar = document.getElementById("hbar");
 var vbar = document.getElementById("vbar");
 var hbar2 = document.getElementById("hbar2");
 var loop = false;
-var textdiv = document.getElementById("textDiv");
+//var textdiv = document.getElementById("textDiv");
 var textbtn = document.getElementById("textbtn");
 
 var select1 = document.getElementById("select1");
@@ -58,10 +58,10 @@ d.setTime(session_time);
 	
 },1000);
 
-textdiv.innerText = w['Нажмите Старт']
+//textdiv.innerText = w['Нажмите Старт']
 txtpulse.innerText = w['Пульс']
 textbtn.innerText = w["Старт"];
-textdiv.innerText = w["Нажмите Старт"]
+//textdiv.innerText = w["Нажмите Старт"]
 
 si1.forEach(addOptions)
 
@@ -95,7 +95,7 @@ var i1 = select1.value;
 var i2 = select2.value;
 //console.log(i1,i2)
 formula = li[select1.value][select2.value];
-
+vertext.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
 if (formula[1]==0) {
 	hbar.parentElement.hidden = true;
 }
@@ -127,15 +127,24 @@ while(loop)
   if (!loop) break
   if (select1.value == "Антивирус")
   {
-	textdiv.innerText = w["Вдох1"]
+	//textdiv.innerText = w["Вдох1"]
+	vertext.innerText = w["Вдох1"]
   }
   else {
-	  textdiv.innerText = w["Вдох"]
+	  //textdiv.innerText = w["Вдох"]
+	  vertext.innerText = w["Вдох"]
   }
 vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
-vertext.style.webkitAnimationDuration = vbar.style.webkitAnimationDuration;
+vertext.style.webkitAnimationDuration = ""+formula[0]*pulsesec*1000+"ms";;
+//vertext.style.webkitAnimationName="stop";
+
 if (isSound) {audio1.play();}
 vbar.style.webkitAnimationName="vertup";
+
+if (vertext.style.webkitAnimationName=="textanim2") 
+{
+	vertext.style.webkitAnimation.animationOld; 
+}
 vertext.style.webkitAnimationName="textanim2";	
 //var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
 //await anim2.finished
@@ -143,12 +152,13 @@ await sleep(formula[0]*pulsesec*1000);
   //await sleep(3*1000);
 vbar.style.height = '100%'
 vbar.style.top = '0%'
-  
+	
   //console.log('finished 1')
 if (!loop) break;
 if (formula[1]>0)
 {	
-  textdiv.innerText = w["Пауза"]
+  //textdiv.innerText = w["Пауза"]
+  hbartext.innerText = w["Пауза"]
 hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
 if (isSound) {audio2.play();}
 
@@ -169,15 +179,18 @@ await sleep(formula[1]*pulsesec*1000);
 if (!loop) break
 if (select1.value == "Антивирус")
   {
-	textdiv.innerText = w["Выдох1"]
+	//textdiv.innerText = w["Выдох1"]
+	vertext.innerText = w["Выдох1"]
   }
   else {
-	  textdiv.innerText = w["Выдох"]
+	  //textdiv.innerText = w["Выдох"]
+	  vertext.innerText = w["Выдох"]
   }
 vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
-vertext.style.webkitAnimationDuration = vbar.style.webkitAnimationDuration;
+vertext.style.webkitAnimationDuration = ""+formula[2]*pulsesec*1000+"ms";
 if (isSound) {audio3.play();}
 vbar.style.webkitAnimationName="vertdown";
+//vertext.style.webkitAnimationName="stop";
 vertext.style.webkitAnimationName="textanim";	
   //var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
 //await anim2.finished
@@ -185,6 +198,8 @@ await sleep(formula[2]*pulsesec*1000);
   //await sleep(3*1000);
   vbar.style.height = '20px'
   vbar.style.top = '280px'
+  vbar.style.webkitAnimationName="stop";
+  vertext.style.webkitAnimationName="stop";
   //return;
 //console.log('finished 3')
 
@@ -194,59 +209,76 @@ if (select1.value == "Антивирус")
 		//console.log("start...")
   //hbar.style.animation = "hmove 3s";
   if (!loop) break
-  textdiv.innerText = w["Вдох2"]
+  //textdiv.innerText = w["Вдох2"]
+  vertext.innerText = w["Вдох2"]
 vbar.style.webkitAnimationDuration= ""+formula[0]*pulsesec*1000+"ms";
+vertext.style.webkitAnimationDuration=""+formula[0]*pulsesec*1000+"ms"
 if (isSound) {audio1.play();}
-vbar.style.webkitAnimationName="vertup";	
+	
+vbar.style.webkitAnimationName="vertup";
+//vertext.style.webkitAnimationName="stop";
+vertext.style.webkitAnimationName="textanim2";
 //var anim2 = vbar.animate([{ height: '20px', top:'280px'}, { height: '100%', top: '0px'}],formula[0]*pulsesec*1000)
 //await anim2.finished
 await sleep(formula[0]*pulsesec*1000);
   //await sleep(3*1000);
 vbar.style.height = '100%'
 vbar.style.top = '0%'
-  
+vbar.style.webkitAnimationName="stop";
+vertext.style.webkitAnimationName="stop";
   //console.log('finished 1')
 if (!loop) break;
 if (formula[1]>0)
 {	
 	if (select1.value == "Антивирус")
 	{
-	  textdiv.innerText = w["Пауза1"]
+	  //textdiv.innerText = w["Пауза1"]
+	  hbartext.innerText = w["Пауза1"]
 	}
 	else {
-		textdiv.innerText = w["Пауза"]
+		//textdiv.innerText = w["Пауза"]
+		hbartext.innerText = w["Пауза"]
 	}
 hbar.style.webkitAnimationDuration=""+formula[1]*pulsesec*1000+"ms";
+hbartext.style.webkitAnimationDuration=hbar.style.webkitAnimationDuration
 if (isSound) {audio2.play();}
+hbartext.style.webkitAnimationName="horright";
 hbar.style.webkitAnimationName="horright";
 
-//var anim = hbar.animate([{ width: '20px' }, { width: '300px' }],formula[1]*pulsesec*1000)
-//await anim.finished
 await sleep(formula[1]*pulsesec*1000);
   //await sleep(3*1000);
   hbar.style.webkitAnimationName="stop";
-//hbar.style.width = '350px'
-//console.log('finished 2')
-  //return;
+  hbartext.style.webkitAnimationName="stop";
+
 }
 if (!loop) break
 if (select1.value == "Антивирус")
 {
-  textdiv.innerText = w["Выдох1"]
+  //textdiv.innerText = w["Выдох1"]
+  vertext.innerText = w["Выдох1"]
 }
 else {
-	textdiv.innerText = w["Выдох"]
+	//textdiv.innerText = w["Выдох"]
+	vertext.innerText = w["Выдох"]
 }
 vbar.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+vertext.style.webkitAnimationDuration=""+formula[2]*pulsesec*1000+"ms";
+//vertext.style.webkitAnimationName="stop";
 if (isSound) {audio3.play();}
+
 vbar.style.webkitAnimationName="vertdown";
+
+vertext.style.webkitAnimationName="textanim";
+
+
   //var anim2 = vbar.animate([{ height: '100%', top: '0px' }, { height: '20px', top:'280px' }],formula[2]*pulsesec*1000)
 //await anim2.finished
 await sleep(formula[2]*pulsesec*1000);
   //await sleep(3*1000);
   //return;
 //console.log('finished 3')
-
+vbar.style.webkitAnimationName="stop";
+vertext.style.webkitAnimationName="stop";
 
 } // конец повтора
 if (!loop) break
@@ -254,10 +286,12 @@ if (formula[3]>0)
   {
 	if (select1.value == "Антивирус")
 	{
-	  textdiv.innerText = w["Пауза1"]
+	  //textdiv.innerText = w["Пауза1"]
+	  hbar2text.innerText = w["Пауза1"]
 	}
 	else {
-		textdiv.innerText = w["Пауза"]
+		//textdiv.innerText = w["Пауза"]
+		hbar2text.innerText = w["Пауза"]
 	}
 	vbar.style.height = '1.5rem'
 	vbar.style.top = 13-1.5+'rem'
@@ -269,9 +303,6 @@ if (formula[3]>0)
 	  hbar2text.style.webkitAnimationDuration=hbar2.style.webkitAnimationDuration;
 	  hbar2text.style.webkitAnimationName="textanim";
 
-//var anim = hbar.animate([{ width: '350px' }, { width: '20px' }],3000)
-//var anim = hbar2.animate([{ width: '300px' }, { width: '0px' }],formula[3]*pulsesec*1000)
-//await anim.finished
   await sleep(formula[3]*pulsesec*1000);
 	  //await sleep(3*1000);
 	  hbar2.style.webkitAnimationName="stop";
@@ -313,7 +344,7 @@ async function startStopButton()
 	else
 		{
 		textbtn.innerText = w["Старт"];
-		textdiv.innerText = w["Нажмите Старт"]
+		//textdiv.innerText = w["Нажмите Старт"]
 			loop = false;
 			
 		}
