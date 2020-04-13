@@ -27,10 +27,10 @@ var pulsesec = 60/pulse; // ДЛительность 1 удара пульса
 txttime.innerText = "00:00"
 var session_time = 0; //Date.now()
 
-var audio1 = new Audio('1.mp3');
-var audio2 = new Audio('2.mp3');
-var audio3 = new Audio('3.mp3');
-var audio4 = new Audio('4.mp3');
+var audio1 = new Audio('11.mp3');
+var audio2 = new Audio('22.mp3');
+var audio3 = new Audio('33.mp3');
+var audio4 = new Audio('44.mp3');
 //audio.play();
 
 
@@ -152,7 +152,7 @@ await sleep(formula[0]*pulsesec*1000);
   //await sleep(3*1000);
 vbar.style.height = '100%'
 vbar.style.top = '0%'
-	
+if (isSound) {audio1.pause();audio1.currentTime = 0;}	
   //console.log('finished 1')
 if (!loop) break;
 if (formula[1]>0)
@@ -172,6 +172,7 @@ await sleep(formula[1]*pulsesec*1000);
   //await sleep(3*1000);
   hbar.style.webkitAnimationName="stop";
   hbartext.style.webkitAnimationName="stop";
+  if (isSound) {audio2.pause();audio2.currentTime = 0;}
 //hbar.style.width = '350px'
 //console.log('finished 2')
   //return;
@@ -200,6 +201,7 @@ await sleep(formula[2]*pulsesec*1000);
   vbar.style.top = '280px'
   vbar.style.webkitAnimationName="stop";
   vertext.style.webkitAnimationName="stop";
+  if (isSound) {audio3.pause();audio3.currentTime = 0;}
   //return;
 //console.log('finished 3')
 
@@ -226,6 +228,7 @@ vbar.style.height = '100%'
 vbar.style.top = '0%'
 vbar.style.webkitAnimationName="stop";
 vertext.style.webkitAnimationName="stop";
+if (isSound) {audio1.pause();audio1.currentTime = 0;}
   //console.log('finished 1')
 if (!loop) break;
 if (formula[1]>0)
@@ -249,6 +252,7 @@ await sleep(formula[1]*pulsesec*1000);
   //await sleep(3*1000);
   hbar.style.webkitAnimationName="stop";
   hbartext.style.webkitAnimationName="stop";
+  if (isSound) {audio2.pause();audio2.currentTime = 0;}
 
 }
 if (!loop) break
@@ -279,6 +283,7 @@ await sleep(formula[2]*pulsesec*1000);
 //console.log('finished 3')
 vbar.style.webkitAnimationName="stop";
 vertext.style.webkitAnimationName="stop";
+if (isSound) {audio3.pause();audio3.currentTime = 0;}
 
 } // конец повтора
 if (!loop) break
@@ -308,6 +313,7 @@ if (formula[3]>0)
 	  hbar2.style.webkitAnimationName="stop";
 	hbar2.style.width = '0%'
 	hbar2text.style.webkitAnimationName="stop";
+	if (isSound) {audio4.pause();audio4.currentTime = 0;}
   //console.log('finished 4')
   }	
 	}
